@@ -22,7 +22,7 @@
 		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
 		<maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
 
-		<commons.core.version>1.0.1</commons.core.version>
+		<core.version>1.0.1</core.version>
 		<security.core.version>1.0.1</security.core.version>
 	</properties>
 	<dependencyManagement>
@@ -33,6 +33,18 @@
 				<version>Cairo-SR7</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.cheng</groupId>
+				<artifactId>cheng-core</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.cheng</groupId>
+				<artifactId>cheng-security-core</artifactId>
+				<version>${core.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -72,4 +84,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<modules>
+		<module>cheng-security-core</module>
+		<module>cheng-core</module>
+	</modules>
 </project>
