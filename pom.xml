@@ -17,13 +17,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 
-		<spring.io.platform.version>Cairo-SR7</spring.io.platform.version>
-
 		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
 		<maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
 
+		<spring.io.platform.version>Cairo-SR7</spring.io.platform.version>
+		<servlet.api.version>4.0.1</servlet.api.version>
+
 		<core.version>1.0.1</core.version>
 		<security.core.version>1.0.1</security.core.version>
+		<security.single.version>1.0.1</security.single.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -34,17 +36,29 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet.api.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.cheng</groupId>
 				<artifactId>cheng-core</artifactId>
 				<version>${core.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.cheng</groupId>
 				<artifactId>cheng-security-core</artifactId>
-				<version>${core.version}</version>
+				<version>${security.core.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.cheng</groupId>
+				<artifactId>cheng-security-single</artifactId>
+				<version>${security.single.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -87,5 +101,7 @@
 	<modules>
 		<module>cheng-security-core</module>
 		<module>cheng-core</module>
+		<module>cheng-security-single</module>
+		<module>cheng-security-single-demo</module>
 	</modules>
 </project>
