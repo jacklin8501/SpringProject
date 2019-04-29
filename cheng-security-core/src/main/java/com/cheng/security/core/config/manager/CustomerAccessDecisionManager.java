@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.cheng.security.core.config;
+package com.cheng.security.core.config.manager;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -25,5 +27,9 @@ public interface CustomerAccessDecisionManager extends AccessDecisionManager {
 			return !StringUtils.equalsIgnoreCase("anonymousUser", principal);
 		}
 		return false;
+	}
+	
+	default String username(Authentication authentication) {
+		return authentication.getPrincipal().toString();
 	}
 }

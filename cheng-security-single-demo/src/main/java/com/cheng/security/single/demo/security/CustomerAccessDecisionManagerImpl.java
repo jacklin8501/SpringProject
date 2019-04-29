@@ -15,7 +15,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 
-import com.cheng.security.core.config.CustomerAccessDecisionManager;
+import com.cheng.security.core.config.manager.CustomerAccessDecisionManager;
 
 /**
  * @author jack.lin
@@ -32,15 +32,17 @@ public class CustomerAccessDecisionManagerImpl implements CustomerAccessDecision
 			throws AccessDeniedException, InsufficientAuthenticationException {
 		FilterInvocation fi = FilterInvocation.class.cast(object);
 		String url = fi.getRequestUrl();
-		logger.info(":: url = {}", url);
-		
+		String method = fi.getHttpRequest().getMethod();
+		logger.info(":: {}>>{}", method, url);
+		logger.info(":: username = {}", username(authentication));
 		if (!isLogin(authentication)) {
 			boolean bool = matcher.match("/login.html/**", url);
 			if (!bool) {
+				logger.info(":: access failure.");
 				throw new InsufficientAuthenticationException("please login");
 			}
 		}
-		logger.info(":: access success");
+		logger.info(":: access success.");
 	}
 
 	@Override

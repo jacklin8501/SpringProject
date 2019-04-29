@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.security.core.properties;
+package com.cheng.core.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
