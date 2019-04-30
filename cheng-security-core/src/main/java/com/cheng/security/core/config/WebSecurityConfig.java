@@ -4,7 +4,6 @@
 package com.cheng.security.core.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,7 +26,6 @@ import com.cheng.security.core.config.manager.CustomerAccessDecisionManager;
  *
  */
 @Configuration
-@EnableConfigurationProperties(value={ChengSecurityProperties.class})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired(required=false)

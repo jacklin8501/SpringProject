@@ -27,6 +27,7 @@
 		<core.version>1.0.1</core.version>
 		<security.core.version>1.0.1</security.core.version>
 		<security.single.version>1.0.1</security.single.version>
+		<jpa.version>1.0.1</jpa.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -66,6 +67,12 @@
 				<groupId>com.cheng</groupId>
 				<artifactId>cheng-security-single</artifactId>
 				<version>${security.single.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.cheng</groupId>
+				<artifactId>cheng-jpa</artifactId>
+				<version>${jpa.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -110,5 +117,7 @@
 		<module>cheng-core</module>
 		<module>cheng-security-single</module>
 		<module>cheng-security-single-demo</module>
+		<module>cheng-jpa</module>
+		<module>cheng-security-data</module>
 	</modules>
 </project>
