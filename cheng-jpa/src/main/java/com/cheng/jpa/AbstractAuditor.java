@@ -29,6 +29,8 @@ import com.cheng.jpa.Processor.AuditorPreUpdateProcessor;
 @MappedSuperclass
 public abstract class AbstractAuditor {
 
+	public static final String UNKOWN = "UNKOWN";
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
@@ -40,11 +42,11 @@ public abstract class AbstractAuditor {
 	
 	@CreatedBy
 	@Column(name="CREATE_BY", length=255, nullable=false)
-	private String createBy;
+	private String createBy = UNKOWN;
 	
 	@CreatedBy
 	@Column(name="CREATE_BY_CLIENT", length=255, nullable=false)
-	private String createByClient;
+	private String createByClient = UNKOWN;
 	
 	@CreatedDate
 	@Column(name="CREATE_DATE", nullable=false)
@@ -52,11 +54,11 @@ public abstract class AbstractAuditor {
 	
 	@LastModifiedBy
 	@Column(name="LAST_MODIFIED_BY", length=255, nullable=false)
-	private String lastModifiedBy;
+	private String lastModifiedBy = UNKOWN;
 	
 	@LastModifiedBy
 	@Column(name="LAST_MODIFIED_BY_Client", length=255, nullable=false)
-	private String lastModifiedByClient;
+	private String lastModifiedByClient = UNKOWN;
 	
 	@LastModifiedDate
 	@Column(name="LAST_MODIFIED_DATE", nullable=false)
