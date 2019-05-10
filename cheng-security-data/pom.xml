@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.cheng</groupId>
-		<artifactId>platform</artifactId>
+		<artifactId>cheng-platform</artifactId>
 		<version>1.0.1</version>
 	</parent>
 	<artifactId>cheng-security-data</artifactId>
