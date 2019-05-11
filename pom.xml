@@ -112,5 +112,6 @@
 		<module>cheng-security-single-demo</module>
 		<module>cheng-jpa</module>
 		<module>cheng-security-data</module>
+		<module>cheng-beetl-demo</module>
 	</modules>
 </project>
