@@ -13,6 +13,10 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.beetl.core.Configuration;
+import org.beetl.core.GroupTemplate;
+import org.beetl.core.Template;
+import org.beetl.core.resource.ClasspathResourceLoader;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
@@ -53,17 +57,18 @@ public class PageController {
 	}
 	
 	@GetMapping("/index")
-	public void index(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Resource resource = new ClassPathResource("resources/index.html");
-		BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()));
-		String page = "";
-		while (reader.ready()) {
-			page += reader.readLine();
-		}
+	public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		/*ClasspathResourceLoader resourceLoader = new ClasspathResourceLoader("/resources");
+		Configuration cfg = Configuration.defaultConfiguration();
+		cfg.add("/beetl.properties");
+		GroupTemplate gt = new GroupTemplate(resourceLoader, cfg);
+		Template t = gt.getTemplate("/index.html");
+		String str = t.render();
 		response.setContentType(MediaType.TEXT_HTML_VALUE);
 		response.setCharacterEncoding("UTF-8");
 		try (PrintWriter writer = response.getWriter()) {
-			writer.write(page);
-		}
+			writer.write(str);
+		}*/
+		return "index.html";
 	}
 }

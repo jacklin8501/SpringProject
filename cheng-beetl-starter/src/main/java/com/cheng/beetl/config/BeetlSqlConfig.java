@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.beetlsql.config;
+package com.cheng.beetl.config;
 
 import javax.sql.DataSource;
 

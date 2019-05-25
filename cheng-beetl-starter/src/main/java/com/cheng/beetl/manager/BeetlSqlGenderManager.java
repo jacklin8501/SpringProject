@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.cheng.beetlsql.manager;
+package com.cheng.beetl.manager;
 
 import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.ext.gen.GenConfig;
 import org.beetl.sql.ext.gen.MapperCodeGen;
 
-import com.cheng.beetlsql.gender.BeetlSqlGender;
+import com.cheng.beetl.gender.BeetlSqlGender;
 import com.cheng.core.holder.SpringContextHolder;
 
 /**

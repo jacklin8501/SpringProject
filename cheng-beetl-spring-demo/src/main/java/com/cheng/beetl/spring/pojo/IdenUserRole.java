@@ -5,8 +5,8 @@ import org.beetl.sql.core.TailBean;
 import org.beetl.sql.core.annotatoin.Table;
 import org.beetl.sql.core.annotatoin.UpdateIgnore;
 
-import com.cheng.beetlsql.annotation.NowDefault;
-import com.cheng.beetlsql.annotation.UpperCase;
+import com.cheng.beetl.annotation.NowDefault;
+import com.cheng.beetl.annotation.UpperCase;
 
 
 /* 

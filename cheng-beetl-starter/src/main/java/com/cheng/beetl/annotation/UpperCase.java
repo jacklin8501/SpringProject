@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.beetlsql.annotation;
+package com.cheng.beetl.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 import org.beetl.sql.core.annotatoin.Builder;
 
-import com.cheng.beetlsql.builder.NowDatetimeBuilder;
+import com.cheng.beetl.builder.UpperCaseBuilder;
 
 /**
  * @author jack.lin
@@ -18,7 +18,7 @@ import com.cheng.beetlsql.builder.NowDatetimeBuilder;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value={ElementType.METHOD,ElementType.FIELD})
-@Builder(value=NowDatetimeBuilder.class)
-public @interface NowDefault {
+@Builder(value=UpperCaseBuilder.class)
+public @interface UpperCase {
 
 }

@@ -6,7 +6,7 @@ package com.cheng.beetl.gen;
 import org.junit.Test;
 
 import com.cheng.AbstractMvcTest;
-import com.cheng.beetlsql.manager.BeetlSqlGenderManager;
+import com.cheng.beetl.manager.BeetlSqlGenderManager;
 
 /**
  * @author jack.lin

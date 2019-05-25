@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.beetlsql.gender;
+package com.cheng.beetl.gender;
 
 /**
  * @author jack.lin

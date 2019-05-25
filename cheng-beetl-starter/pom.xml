@@ -5,10 +5,16 @@
 		<groupId>com.cheng</groupId>
 		<artifactId>platform</artifactId>
 		<version>1.0.1</version>
+		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>cheng-beetlsql-starter</artifactId>
+	<artifactId>cheng-beetl-starter</artifactId>
 	
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.cheng</groupId>
 			<artifactId>cheng-core</artifactId>

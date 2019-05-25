@@ -12,7 +12,29 @@ spring:
       password: "000000"
       roles:
       - MAXADMIN
-    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/beetlsql?useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    data-password: "000000"
+
+beetlsql:
+  enabled: false
+  sqlPath: /sql
+  nameConversion: org.beetl.sql.core.UnderlinedNameConversion
+  dev: true
+  daoSuffix: Dao
+  basePackage: com.cheng.beetl.spring.dao
+  dbStyle: org.beetl.sql.core.db.MySqlStyle
+  pojoPackage: com.cheng.beetl.spring.pojo
+
+beetl:
+  enabled: true
+  
+FN:
+  upper: com.cheng.beetl.function.Upper
+  lower: com.cheng.beetlsql.function.Lower
+
 cheng:
   security:
     form:

@@ -18,4 +18,4 @@ beetlsql:
   pojoPackage: com.cheng.beetl.spring.pojo
   
 FN:
-  upper: com.cheng.beetlsql.function.Upper
+  upper: com.cheng.beetl.function.Upper

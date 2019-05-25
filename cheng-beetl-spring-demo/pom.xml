@@ -12,7 +12,7 @@
 	
 		<dependency>
 			<groupId>com.cheng</groupId>
-			<artifactId>cheng-beetlsql-starter</artifactId>
+			<artifactId>cheng-beetl-starter</artifactId>
 		</dependency>
 	
 		<dependency>
