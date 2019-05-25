@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+spring:
+  session:
+    store-type: none
+  security:
+    user:
+      name: maxadmin
+      password: "000000"
+      roles:
+      - MAXADMIN
+    
+cheng:
+  security:
+    form:
+      login-page: /sign-in.html
+      login-processing-url: /security-auth
+      max-sessions-prevents-login: false
+      maximum-sessions: 1

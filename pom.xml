@@ -129,15 +129,16 @@
 	<modules>
 		<module>cheng-security-core</module>
 		<module>cheng-core</module>
-		<module>cheng-security-single</module>
-		<module>cheng-security-single-demo</module>
+		
+		
 		<module>cheng-jpa</module>
-		<module>cheng-security-data</module>
+		
 		<module>cheng-beetl-demo</module>
 		<module>cheng-beetl-spring-demo</module>
 		<module>cheng-beetlsql-starter</module>
 
 
-		
+
+		<module>cheng-security-singlepage-demo</module>
 	</modules>
 </project>

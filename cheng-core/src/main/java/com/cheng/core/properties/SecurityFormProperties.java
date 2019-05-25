@@ -11,6 +11,8 @@ public class SecurityFormProperties {
 
 	private String loginPage;
 	private String loginProcessingUrl;
+	private Integer maximumSessions;
+	private Boolean maxSessionsPreventsLogin;
 	
 	public String getLoginPage() {
 		return loginPage;
@@ -23,5 +25,17 @@ public class SecurityFormProperties {
 	}
 	public void setLoginProcessingUrl(String loginProcessingUrl) {
 		this.loginProcessingUrl = loginProcessingUrl;
+	}
+	public Integer getMaximumSessions() {
+		return maximumSessions;
+	}
+	public void setMaximumSessions(Integer maximumSessions) {
+		this.maximumSessions = maximumSessions;
+	}
+	public Boolean getMaxSessionsPreventsLogin() {
+		return maxSessionsPreventsLogin;
+	}
+	public void setMaxSessionsPreventsLogin(Boolean maxSessionsPreventsLogin) {
+		this.maxSessionsPreventsLogin = maxSessionsPreventsLogin;
 	}
 }

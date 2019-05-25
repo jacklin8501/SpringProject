@@ -5,7 +5,6 @@ package com.cheng.security.core.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.session.SessionRegistry;
@@ -25,8 +24,7 @@ import com.cheng.security.core.config.manager.CustomerAccessDecisionManager;
  * @author jack.lin
  *
  */
-@Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSinglePageSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired(required=false)
 	private CustomerAccessDecisionManager customerAccessDecisionManager;
@@ -52,8 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.sessionManagement()
 			.invalidSessionStrategy(new InvalidSessionStrategyImpl())
-			.maximumSessions(1)
-			.maxSessionsPreventsLogin(false)
+			.maximumSessions(security.getForm().getMaximumSessions())
+			.maxSessionsPreventsLogin(security.getForm().getMaxSessionsPreventsLogin())
 			.expiredSessionStrategy(new SessionInformationExpiredStrategyImpl())
 			.sessionRegistry(sessionRegistry())
 			.and()
