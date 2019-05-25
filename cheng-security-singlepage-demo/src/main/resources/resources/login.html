@@ -2,22 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sign In</title>
+<title>Login</title>
 </head>
 <body>
 	<div>
 		<fieldset>
 			<legend>Sign In</legend>
-			<form id="sign_in_form">
+			<em>${error}</em>
+			<form id="sign_in_form" action="/backend/security-auth" method="post">
 				<div>
 					<label for="username">User Name:</label>
-					<input id="username" name="username" />
+					<input id="username" name="username" value="${username}" />
 				</div>
 				<div>
 					<label for="password">Password:</label>
 					<input id="password" name="password" type="password" />
 				</div>
-				<button id="sign_in_btn" type="button" onclick="SignInModel.signIn()">Sign In</button>
+				<button id="sign_in_btn">Sign In</button>
 			</form>
 		</fieldset>
 	</div>
@@ -29,7 +30,6 @@
 		}
 	});
 	var SignInModel = (function(){
-		
 		return {
 			signIn : function() {
 				var params = {
@@ -37,7 +37,7 @@
 						password : $('#password').val()
 				};
 				$.post('/security-auth', params, function(d) {
-					console.info(d);
+					window.location.href = '/index';
 				});
 			}
 		}

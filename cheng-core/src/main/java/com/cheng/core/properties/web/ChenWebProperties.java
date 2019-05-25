@@ -1,15 +1,12 @@
 /**
  * 
  */
-package com.cheng.core.properties;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
+package com.cheng.core.properties.web;
 
 /**
  * @author jack.lin
  *
  */
-@ConfigurationProperties(prefix="cheng.web")
 public class ChenWebProperties {
 	
 	private String ajaxRequestKey = "X-Requested-With";

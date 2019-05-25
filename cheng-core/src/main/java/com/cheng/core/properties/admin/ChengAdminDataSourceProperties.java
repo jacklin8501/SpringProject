@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.core.properties;
+package com.cheng.core.properties.admin;
 
 /**
  * @author jack.lin

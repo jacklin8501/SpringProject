@@ -9,12 +9,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
-import org.springframework.security.web.session.ConcurrentSessionFilter;
 
-import com.cheng.core.properties.ChengSecurityProperties;
-import com.cheng.security.core.config.Strategy.InvalidSessionStrategyImpl;
-import com.cheng.security.core.config.Strategy.SessionInformationExpiredStrategyImpl;
-import com.cheng.security.core.config.filter.SessionFilter;
+import com.cheng.core.properties.ChengProperties;
 import com.cheng.security.core.config.handler.AuthenticationFailureHandlerImpl;
 import com.cheng.security.core.config.handler.AuthenticationSuccessHandlerImpl;
 import com.cheng.security.core.config.handler.LogoutSuccessHandlerImpl;
@@ -28,8 +24,9 @@ public class WebSinglePageSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired(required=false)
 	private CustomerAccessDecisionManager customerAccessDecisionManager;
+	
 	@Autowired
-	private ChengSecurityProperties security;
+	private ChengProperties cheng;
 
 	@Bean
 	public SessionRegistry sessionRegistry() {
@@ -38,8 +35,8 @@ public class WebSinglePageSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-			.addFilterAfter(new SessionFilter(sessionRegistry()), ConcurrentSessionFilter.class);
+		http.csrf().disable();
+			//.addFilterAfter(new SessionFilter(sessionRegistry()), ConcurrentSessionFilter.class);
 		
 		if (null != customerAccessDecisionManager) {
 			http
@@ -48,24 +45,28 @@ public class WebSinglePageSecurityConfig extends WebSecurityConfigurerAdapter {
 		}
 		
 		http
+			.rememberMe().disable()
 			.sessionManagement()
-			.invalidSessionStrategy(new InvalidSessionStrategyImpl())
-			.maximumSessions(security.getForm().getMaximumSessions())
-			.maxSessionsPreventsLogin(security.getForm().getMaxSessionsPreventsLogin())
-			.expiredSessionStrategy(new SessionInformationExpiredStrategyImpl())
+			.invalidSessionUrl(cheng.getSecurity().getSession().getInvalidSessionUrl())
+			//.invalidSessionStrategy(new InvalidSessionStrategyImpl())
+			.maximumSessions(cheng.getSecurity().getSession().getMaximumSessions())
+			.maxSessionsPreventsLogin(cheng.getSecurity().getSession().getMaxSessionsPreventsLogin())
+			.expiredUrl(cheng.getSecurity().getSession().getExpiredUrl())
 			.sessionRegistry(sessionRegistry())
 			.and()
 			
 			.and()
 			.formLogin()
-			.loginPage(security.getForm().getLoginPage())
-			.loginProcessingUrl(security.getForm().getLoginProcessingUrl())
+			.loginPage(cheng.getSecurity().getForm().getLoginPage())
+			.loginProcessingUrl(cheng.getSecurity().getForm().getLoginProcessingUrl())
 			.successHandler(new AuthenticationSuccessHandlerImpl())
 			.failureHandler(new AuthenticationFailureHandlerImpl())
 			.and()
+			
 			.logout()
 			.logoutSuccessHandler(new LogoutSuccessHandlerImpl())
 			.and()
+			
 			.httpBasic();
 		
 	}

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.security.core.config.Strategy;
+package com.cheng.security.core.config.Strategy.impl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,7 +29,7 @@ public class SessionInformationExpiredStrategyImpl implements SessionInformation
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 		try ( PrintWriter writer = response.getWriter(); ) {
-			writer.write("Session is expired.");
+			writer.write("Session过期!");
 		}
 	}
 

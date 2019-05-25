@@ -9,15 +9,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.cheng.core.holder.SpringContextHolder;
-import com.cheng.core.properties.ChenWebProperties;
-import com.cheng.core.properties.ChengSecurityProperties;
+import com.cheng.core.properties.ChengProperties;
 
 /**
  * @author jack.lin
  *
  */
 @Configuration
-@EnableConfigurationProperties({ChengSecurityProperties.class, ChenWebProperties.class})
+@EnableConfigurationProperties({ChengProperties.class})
 public class CoreConfig {
 
 	@Bean

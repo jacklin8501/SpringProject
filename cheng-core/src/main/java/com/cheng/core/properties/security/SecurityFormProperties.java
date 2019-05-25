@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cheng.core.properties;
+package com.cheng.core.properties.security;
 
 /**
  * @author jack.lin
@@ -11,8 +11,8 @@ public class SecurityFormProperties {
 
 	private String loginPage;
 	private String loginProcessingUrl;
-	private Integer maximumSessions;
-	private Boolean maxSessionsPreventsLogin;
+	private String logoutProccessUrl;
+	private String indexPage;
 	
 	public String getLoginPage() {
 		return loginPage;
@@ -26,16 +26,16 @@ public class SecurityFormProperties {
 	public void setLoginProcessingUrl(String loginProcessingUrl) {
 		this.loginProcessingUrl = loginProcessingUrl;
 	}
-	public Integer getMaximumSessions() {
-		return maximumSessions;
+	public String getIndexPage() {
+		return indexPage;
 	}
-	public void setMaximumSessions(Integer maximumSessions) {
-		this.maximumSessions = maximumSessions;
+	public void setIndexPage(String indexPage) {
+		this.indexPage = indexPage;
 	}
-	public Boolean getMaxSessionsPreventsLogin() {
-		return maxSessionsPreventsLogin;
+	public String getLogoutProccessUrl() {
+		return logoutProccessUrl;
 	}
-	public void setMaxSessionsPreventsLogin(Boolean maxSessionsPreventsLogin) {
-		this.maxSessionsPreventsLogin = maxSessionsPreventsLogin;
+	public void setLogoutProccessUrl(String logoutProccessUrl) {
+		this.logoutProccessUrl = logoutProccessUrl;
 	}
 }
